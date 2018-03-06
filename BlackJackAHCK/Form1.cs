@@ -42,5 +42,15 @@ namespace BlackJackAHCK
         {
 
         }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
