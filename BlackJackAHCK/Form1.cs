@@ -27,5 +27,20 @@ namespace BlackJackAHCK
                 textBox1.Text += $"{x.number} of {x.suit} || ";
             }
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

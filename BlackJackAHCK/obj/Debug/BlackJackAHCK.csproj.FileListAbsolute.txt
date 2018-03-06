@@ -8,3 +8,13 @@ C:\Users\Curtis\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJack
 C:\Users\Curtis\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.csproj.CoreCompileInputs.cache
 C:\Users\Curtis\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.exe
 C:\Users\Curtis\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.pdb
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\bin\Debug\BlackJackAHCK.exe.config
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\bin\Debug\BlackJackAHCK.exe
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\bin\Debug\BlackJackAHCK.pdb
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.csprojResolveAssemblyReference.cache
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.Form1.resources
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.Properties.Resources.resources
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.csproj.GenerateResource.cache
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.csproj.CoreCompileInputs.cache
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.exe
+C:\Users\aouni\Documents\GitHub\BlackJackAHCK\BlackJackAHCK\obj\Debug\BlackJackAHCK.pdb
