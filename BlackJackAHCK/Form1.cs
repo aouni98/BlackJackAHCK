@@ -15,6 +15,17 @@ namespace BlackJackAHCK
         public Form1()
         {
             InitializeComponent();
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Deck test = new Deck(1);
+            test.shuffle();
+            foreach (Card x in test.cards)
+            {
+                textBox1.Text += $"{x.number} of {x.suit} || ";
+            }
         }
     }
 }
