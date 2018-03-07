@@ -40,10 +40,14 @@
             this.play1hand1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.play1hand2 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.play1hit2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.play2hand2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.play2hit2 = new System.Windows.Forms.Button();
             this.play2hand1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,19 +59,23 @@
             this.play2BetButton = new System.Windows.Forms.Button();
             this.play2Money = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.play3Enable = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.play3hand2 = new System.Windows.Forms.Label();
             this.play3hit2 = new System.Windows.Forms.Button();
             this.play3hand1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
+            this.play3Stand = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.play3hit1 = new System.Windows.Forms.Button();
             this.play3Split = new System.Windows.Forms.Button();
             this.play3BetButton = new System.Windows.Forms.Button();
             this.play3Money = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.play4Enable = new System.Windows.Forms.CheckBox();
             this.play4hand2 = new System.Windows.Forms.Label();
             this.play4hit2 = new System.Windows.Forms.Button();
@@ -82,6 +90,8 @@
             this.play4Money = new System.Windows.Forms.Label();
             this.dealerHand1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.compBet = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.compHand2 = new System.Windows.Forms.Label();
@@ -91,16 +101,7 @@
             this.compMoney = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.dealerHand2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.playButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -117,7 +118,6 @@
             this.label1.Size = new System.Drawing.Size(105, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dealer";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
             // 
@@ -145,6 +145,7 @@
             this.play1hit1.TabIndex = 15;
             this.play1hit1.Text = "Hit";
             this.play1hit1.UseVisualStyleBackColor = true;
+            this.play1hit1.Click += new System.EventHandler(this.play1hit1_Click);
             // 
             // play1Stand
             // 
@@ -154,6 +155,7 @@
             this.play1Stand.TabIndex = 16;
             this.play1Stand.Text = "Stand";
             this.play1Stand.UseVisualStyleBackColor = true;
+            this.play1Stand.Click += new System.EventHandler(this.play1Stand_Click);
             // 
             // play1Split
             // 
@@ -163,6 +165,7 @@
             this.play1Split.TabIndex = 17;
             this.play1Split.Text = "Split";
             this.play1Split.UseVisualStyleBackColor = true;
+            this.play1Split.Click += new System.EventHandler(this.play1Split_Click);
             // 
             // play2Enable
             // 
@@ -230,16 +233,40 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Player 1";
-            
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(153, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 25);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "You Lost";
+            this.label13.Visible = false;
             // 
             // play1hand2
             // 
             this.play1hand2.AutoSize = true;
-            this.play1hand2.Location = new System.Drawing.Point(152, 49);
+            this.play1hand2.Location = new System.Drawing.Point(163, 49);
             this.play1hand2.Name = "play1hand2";
             this.play1hand2.Size = new System.Drawing.Size(52, 68);
             this.play1hand2.TabIndex = 24;
             this.play1hand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
+            this.play1hand2.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Green;
+            this.label16.Location = new System.Drawing.Point(11, 19);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 25);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "You Won";
+            this.label16.Visible = false;
             // 
             // play1hit2
             // 
@@ -249,6 +276,8 @@
             this.play1hit2.TabIndex = 23;
             this.play1hit2.Text = "Hit";
             this.play1hit2.UseVisualStyleBackColor = true;
+            this.play1hit2.Visible = false;
+            this.play1hit2.Click += new System.EventHandler(this.play1hit2_Click);
             // 
             // groupBox2
             // 
@@ -274,14 +303,39 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player 2";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(154, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 25);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "You Lost";
+            this.label10.Visible = false;
+            // 
             // play2hand2
             // 
             this.play2hand2.AutoSize = true;
-            this.play2hand2.Location = new System.Drawing.Point(153, 49);
+            this.play2hand2.Location = new System.Drawing.Point(164, 49);
             this.play2hand2.Name = "play2hand2";
             this.play2hand2.Size = new System.Drawing.Size(52, 68);
             this.play2hand2.TabIndex = 24;
             this.play2hand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
+            this.play2hand2.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Green;
+            this.label11.Location = new System.Drawing.Point(12, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 25);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "You Won";
+            this.label11.Visible = false;
             // 
             // play2hit2
             // 
@@ -291,6 +345,8 @@
             this.play2hit2.TabIndex = 23;
             this.play2hit2.Text = "Hit";
             this.play2hit2.UseVisualStyleBackColor = true;
+            this.play2hit2.Visible = false;
+            this.play2hit2.Click += new System.EventHandler(this.play2hit2_Click);
             // 
             // play2hand1
             // 
@@ -325,6 +381,7 @@
             this.play2Stand.TabIndex = 16;
             this.play2Stand.Text = "Stand";
             this.play2Stand.UseVisualStyleBackColor = true;
+            this.play2Stand.Click += new System.EventHandler(this.play2Stand_Click);
             // 
             // label5
             // 
@@ -343,6 +400,7 @@
             this.play2hit1.TabIndex = 15;
             this.play2hit1.Text = "Hit";
             this.play2hit1.UseVisualStyleBackColor = true;
+            this.play2hit1.Click += new System.EventHandler(this.play2hit1_Click);
             // 
             // play2Split
             // 
@@ -352,6 +410,7 @@
             this.play2Split.TabIndex = 17;
             this.play2Split.Text = "Split";
             this.play2Split.UseVisualStyleBackColor = true;
+            this.play2Split.Click += new System.EventHandler(this.play2Split_Click);
             // 
             // play2BetButton
             // 
@@ -361,7 +420,6 @@
             this.play2BetButton.TabIndex = 20;
             this.play2BetButton.Text = "Bet";
             this.play2BetButton.UseVisualStyleBackColor = true;
-           
             // 
             // play2Money
             // 
@@ -382,7 +440,7 @@
             this.groupBox3.Controls.Add(this.play3hand1);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.button12);
+            this.groupBox3.Controls.Add(this.play3Stand);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.play3hit1);
             this.groupBox3.Controls.Add(this.play3Split);
@@ -396,6 +454,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Player 3";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(153, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 25);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "You Lost";
+            this.label8.Visible = false;
+            // 
             // play3Enable
             // 
             this.play3Enable.AutoSize = true;
@@ -406,14 +476,27 @@
             this.play3Enable.Text = "Enable Player";
             this.play3Enable.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Green;
+            this.label9.Location = new System.Drawing.Point(11, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 25);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "You Won";
+            this.label9.Visible = false;
+            // 
             // play3hand2
             // 
             this.play3hand2.AutoSize = true;
-            this.play3hand2.Location = new System.Drawing.Point(160, 49);
+            this.play3hand2.Location = new System.Drawing.Point(171, 49);
             this.play3hand2.Name = "play3hand2";
             this.play3hand2.Size = new System.Drawing.Size(52, 68);
             this.play3hand2.TabIndex = 24;
             this.play3hand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
+            this.play3hand2.Visible = false;
             // 
             // play3hit2
             // 
@@ -423,6 +506,8 @@
             this.play3hit2.TabIndex = 23;
             this.play3hit2.Text = "Hit";
             this.play3hit2.UseVisualStyleBackColor = true;
+            this.play3hit2.Visible = false;
+            this.play3hit2.Click += new System.EventHandler(this.play3hit2_Click);
             // 
             // play3hand1
             // 
@@ -449,14 +534,15 @@
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 19;
             // 
-            // button12
+            // play3Stand
             // 
-            this.button12.Location = new System.Drawing.Point(56, 158);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 16;
-            this.button12.Text = "Stand";
-            this.button12.UseVisualStyleBackColor = true;
+            this.play3Stand.Location = new System.Drawing.Point(56, 158);
+            this.play3Stand.Name = "play3Stand";
+            this.play3Stand.Size = new System.Drawing.Size(75, 23);
+            this.play3Stand.TabIndex = 16;
+            this.play3Stand.Text = "Stand";
+            this.play3Stand.UseVisualStyleBackColor = true;
+            this.play3Stand.Click += new System.EventHandler(this.play3Stand_Click);
             // 
             // label15
             // 
@@ -475,6 +561,7 @@
             this.play3hit1.TabIndex = 15;
             this.play3hit1.Text = "Hit";
             this.play3hit1.UseVisualStyleBackColor = true;
+            this.play3hit1.Click += new System.EventHandler(this.play3hit1_Click);
             // 
             // play3Split
             // 
@@ -484,6 +571,7 @@
             this.play3Split.TabIndex = 17;
             this.play3Split.Text = "Split";
             this.play3Split.UseVisualStyleBackColor = true;
+            this.play3Split.Click += new System.EventHandler(this.play3Split_Click);
             // 
             // play3BetButton
             // 
@@ -527,6 +615,30 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Player 4";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(151, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 25);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "You Lost";
+            this.label7.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Green;
+            this.label3.Location = new System.Drawing.Point(9, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 25);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "You Won";
+            this.label3.Visible = false;
+            // 
             // play4Enable
             // 
             this.play4Enable.AutoSize = true;
@@ -540,11 +652,12 @@
             // play4hand2
             // 
             this.play4hand2.AutoSize = true;
-            this.play4hand2.Location = new System.Drawing.Point(153, 49);
+            this.play4hand2.Location = new System.Drawing.Point(164, 49);
             this.play4hand2.Name = "play4hand2";
             this.play4hand2.Size = new System.Drawing.Size(52, 68);
             this.play4hand2.TabIndex = 24;
             this.play4hand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
+            this.play4hand2.Visible = false;
             // 
             // play4hit2
             // 
@@ -554,6 +667,8 @@
             this.play4hit2.TabIndex = 23;
             this.play4hit2.Text = "Hit";
             this.play4hit2.UseVisualStyleBackColor = true;
+            this.play4hit2.Visible = false;
+            this.play4hit2.Click += new System.EventHandler(this.play4hit2_Click);
             // 
             // play4hand1
             // 
@@ -588,6 +703,7 @@
             this.play4Stand.TabIndex = 16;
             this.play4Stand.Text = "Stand";
             this.play4Stand.UseVisualStyleBackColor = true;
+            this.play4Stand.Click += new System.EventHandler(this.play4Stand_Click);
             // 
             // label20
             // 
@@ -606,6 +722,7 @@
             this.play4hit1.TabIndex = 15;
             this.play4hit1.Text = "Hit";
             this.play4hit1.UseVisualStyleBackColor = true;
+            this.play4hit1.Click += new System.EventHandler(this.play4hit1_Click);
             // 
             // play4Split
             // 
@@ -615,6 +732,7 @@
             this.play4Split.TabIndex = 17;
             this.play4Split.Text = "Split";
             this.play4Split.UseVisualStyleBackColor = true;
+            this.play4Split.Click += new System.EventHandler(this.play4Split_Click);
             // 
             // play4BetButton
             // 
@@ -664,6 +782,30 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Comp Player";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Red;
+            this.label17.Location = new System.Drawing.Point(173, 30);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 25);
+            this.label17.TabIndex = 30;
+            this.label17.Text = "You Lost";
+            this.label17.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Green;
+            this.label18.Location = new System.Drawing.Point(31, 30);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(101, 25);
+            this.label18.TabIndex = 29;
+            this.label18.Text = "You Won";
+            this.label18.Visible = false;
+            // 
             // compBet
             // 
             this.compBet.AutoSize = true;
@@ -690,6 +832,7 @@
             this.compHand2.Size = new System.Drawing.Size(52, 68);
             this.compHand2.TabIndex = 24;
             this.compHand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
+            this.compHand2.Visible = false;
             // 
             // compHand1
             // 
@@ -748,121 +891,22 @@
             this.dealerHand2.TabIndex = 28;
             this.dealerHand2.Text = "Empty\r\n";
             // 
-            // label3
+            // playButton
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(9, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 25);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "You Won";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(151, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 25);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "You Lost";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(153, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 25);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "You Lost";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Green;
-            this.label9.Location = new System.Drawing.Point(11, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 25);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "You Won";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(154, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 25);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "You Lost";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Green;
-            this.label11.Location = new System.Drawing.Point(12, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 25);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "You Won";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(153, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 25);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "You Lost";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Green;
-            this.label16.Location = new System.Drawing.Point(11, 19);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(101, 25);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "You Won";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(173, 30);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 25);
-            this.label17.TabIndex = 30;
-            this.label17.Text = "You Lost";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Green;
-            this.label18.Location = new System.Drawing.Point(31, 30);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 25);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "You Won";
+            this.playButton.Location = new System.Drawing.Point(43, 38);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(167, 56);
+            this.playButton.TabIndex = 29;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 561);
+            this.ClientSize = new System.Drawing.Size(1335, 561);
+            this.Controls.Add(this.playButton);
             this.Controls.Add(this.dealerHand2);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.groupBox5);
@@ -923,7 +967,7 @@
         private System.Windows.Forms.Label play3hand1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button play3Stand;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button play3hit1;
         private System.Windows.Forms.Button play3Split;
@@ -964,6 +1008,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button playButton;
     }
 }
 
