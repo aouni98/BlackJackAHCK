@@ -32,6 +32,7 @@ namespace BlackJackAHCK
             if(num <= money)
             {
                 bet = num;
+                money -= bet;
                 return bet;
             }
             bet = 0;
