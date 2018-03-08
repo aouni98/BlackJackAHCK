@@ -40,11 +40,13 @@
             this.play1hand1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dealButton1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.play1hand2 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.play1hit2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dealButton2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.play2hand2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,8 +61,8 @@
             this.play2BetButton = new System.Windows.Forms.Button();
             this.play2Money = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dealButton3 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.play3Enable = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.play3hand2 = new System.Windows.Forms.Label();
             this.play3hit2 = new System.Windows.Forms.Button();
@@ -73,10 +75,11 @@
             this.play3Split = new System.Windows.Forms.Button();
             this.play3BetButton = new System.Windows.Forms.Button();
             this.play3Money = new System.Windows.Forms.Label();
+            this.play3Enable = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dealButton4 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.play4Enable = new System.Windows.Forms.CheckBox();
             this.play4hand2 = new System.Windows.Forms.Label();
             this.play4hit2 = new System.Windows.Forms.Button();
             this.play4hand1 = new System.Windows.Forms.Label();
@@ -88,23 +91,20 @@
             this.play4Split = new System.Windows.Forms.Button();
             this.play4BetButton = new System.Windows.Forms.Button();
             this.play4Money = new System.Windows.Forms.Label();
+            this.play4Enable = new System.Windows.Forms.CheckBox();
             this.dealerHand1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.compBet = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.compHand2 = new System.Windows.Forms.Label();
-            this.compHand1 = new System.Windows.Forms.Label();
+            this.aiHand2 = new System.Windows.Forms.Label();
+            this.aiHand1 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.compMoney = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
-            this.dealButton1 = new System.Windows.Forms.Button();
-            this.dealButton2 = new System.Windows.Forms.Button();
-            this.dealButton4 = new System.Windows.Forms.Button();
-            this.dealButton3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -240,6 +240,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Player 1";
             // 
+            // dealButton1
+            // 
+            this.dealButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealButton1.Location = new System.Drawing.Point(37, 273);
+            this.dealButton1.Name = "dealButton1";
+            this.dealButton1.Size = new System.Drawing.Size(150, 26);
+            this.dealButton1.TabIndex = 30;
+            this.dealButton1.Text = "Deal";
+            this.dealButton1.UseVisualStyleBackColor = true;
+            this.dealButton1.Click += new System.EventHandler(this.dealButton1_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -310,6 +321,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Player 2";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // dealButton2
+            // 
+            this.dealButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealButton2.Location = new System.Drawing.Point(41, 269);
+            this.dealButton2.Name = "dealButton2";
+            this.dealButton2.Size = new System.Drawing.Size(150, 26);
+            this.dealButton2.TabIndex = 35;
+            this.dealButton2.Text = "Deal";
+            this.dealButton2.UseVisualStyleBackColor = true;
+            this.dealButton2.Click += new System.EventHandler(this.dealButton2_Click);
             // 
             // label10
             // 
@@ -464,6 +486,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Player 3";
             // 
+            // dealButton3
+            // 
+            this.dealButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealButton3.Location = new System.Drawing.Point(56, 269);
+            this.dealButton3.Name = "dealButton3";
+            this.dealButton3.Size = new System.Drawing.Size(150, 26);
+            this.dealButton3.TabIndex = 37;
+            this.dealButton3.Text = "Deal";
+            this.dealButton3.UseVisualStyleBackColor = true;
+            this.dealButton3.Click += new System.EventHandler(this.dealButton3_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -475,16 +508,6 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "You Lost";
             this.label8.Visible = false;
-            // 
-            // play3Enable
-            // 
-            this.play3Enable.AutoSize = true;
-            this.play3Enable.Location = new System.Drawing.Point(683, 628);
-            this.play3Enable.Name = "play3Enable";
-            this.play3Enable.Size = new System.Drawing.Size(118, 21);
-            this.play3Enable.TabIndex = 25;
-            this.play3Enable.Text = "Enable Player";
-            this.play3Enable.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -602,6 +625,16 @@
             this.play3Money.TabIndex = 14;
             this.play3Money.Text = "100";
             // 
+            // play3Enable
+            // 
+            this.play3Enable.AutoSize = true;
+            this.play3Enable.Location = new System.Drawing.Point(683, 628);
+            this.play3Enable.Name = "play3Enable";
+            this.play3Enable.Size = new System.Drawing.Size(118, 21);
+            this.play3Enable.TabIndex = 25;
+            this.play3Enable.Text = "Enable Player";
+            this.play3Enable.UseVisualStyleBackColor = true;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dealButton4);
@@ -627,6 +660,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Player 4";
             // 
+            // dealButton4
+            // 
+            this.dealButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dealButton4.Location = new System.Drawing.Point(49, 269);
+            this.dealButton4.Name = "dealButton4";
+            this.dealButton4.Size = new System.Drawing.Size(150, 26);
+            this.dealButton4.TabIndex = 36;
+            this.dealButton4.Text = "Deal";
+            this.dealButton4.UseVisualStyleBackColor = true;
+            this.dealButton4.Click += new System.EventHandler(this.dealButton4_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -650,17 +694,6 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "You Won";
             this.label3.Visible = false;
-            // 
-            // play4Enable
-            // 
-            this.play4Enable.AutoSize = true;
-            this.play4Enable.Location = new System.Drawing.Point(1009, 628);
-            this.play4Enable.Name = "play4Enable";
-            this.play4Enable.Size = new System.Drawing.Size(118, 21);
-            this.play4Enable.TabIndex = 26;
-            this.play4Enable.Text = "Enable Player";
-            this.play4Enable.UseVisualStyleBackColor = true;
-            this.play4Enable.CheckedChanged += new System.EventHandler(this.play4Enable_CheckedChanged);
             // 
             // play4hand2
             // 
@@ -766,6 +799,17 @@
             this.play4Money.TabIndex = 14;
             this.play4Money.Text = "100";
             // 
+            // play4Enable
+            // 
+            this.play4Enable.AutoSize = true;
+            this.play4Enable.Location = new System.Drawing.Point(1009, 628);
+            this.play4Enable.Name = "play4Enable";
+            this.play4Enable.Size = new System.Drawing.Size(118, 21);
+            this.play4Enable.TabIndex = 26;
+            this.play4Enable.Text = "Enable Player";
+            this.play4Enable.UseVisualStyleBackColor = true;
+            this.play4Enable.CheckedChanged += new System.EventHandler(this.play4Enable_CheckedChanged);
+            // 
             // dealerHand1
             // 
             this.dealerHand1.AutoSize = true;
@@ -783,8 +827,8 @@
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.compBet);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.compHand2);
-            this.groupBox5.Controls.Add(this.compHand1);
+            this.groupBox5.Controls.Add(this.aiHand2);
+            this.groupBox5.Controls.Add(this.aiHand1);
             this.groupBox5.Controls.Add(this.label25);
             this.groupBox5.Controls.Add(this.label26);
             this.groupBox5.Controls.Add(this.compMoney);
@@ -838,24 +882,24 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Bet:";
             // 
-            // compHand2
+            // aiHand2
             // 
-            this.compHand2.AutoSize = true;
-            this.compHand2.Location = new System.Drawing.Point(175, 65);
-            this.compHand2.Name = "compHand2";
-            this.compHand2.Size = new System.Drawing.Size(52, 68);
-            this.compHand2.TabIndex = 24;
-            this.compHand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
-            this.compHand2.Visible = false;
+            this.aiHand2.AutoSize = true;
+            this.aiHand2.Location = new System.Drawing.Point(175, 65);
+            this.aiHand2.Name = "aiHand2";
+            this.aiHand2.Size = new System.Drawing.Size(52, 68);
+            this.aiHand2.TabIndex = 24;
+            this.aiHand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
+            this.aiHand2.Visible = false;
             // 
-            // compHand1
+            // aiHand1
             // 
-            this.compHand1.AutoSize = true;
-            this.compHand1.Location = new System.Drawing.Point(83, 65);
-            this.compHand1.Name = "compHand1";
-            this.compHand1.Size = new System.Drawing.Size(52, 68);
-            this.compHand1.TabIndex = 21;
-            this.compHand1.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
+            this.aiHand1.AutoSize = true;
+            this.aiHand1.Location = new System.Drawing.Point(83, 65);
+            this.aiHand1.Name = "aiHand1";
+            this.aiHand1.Size = new System.Drawing.Size(52, 68);
+            this.aiHand1.TabIndex = 21;
+            this.aiHand1.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
             // 
             // label25
             // 
@@ -904,50 +948,6 @@
             this.playButton.Text = "Play";
             this.playButton.UseVisualStyleBackColor = true;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
-            // 
-            // dealButton1
-            // 
-            this.dealButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dealButton1.Location = new System.Drawing.Point(37, 273);
-            this.dealButton1.Name = "dealButton1";
-            this.dealButton1.Size = new System.Drawing.Size(150, 26);
-            this.dealButton1.TabIndex = 30;
-            this.dealButton1.Text = "Deal";
-            this.dealButton1.UseVisualStyleBackColor = true;
-            this.dealButton1.Click += new System.EventHandler(this.dealButton1_Click);
-            // 
-            // dealButton2
-            // 
-            this.dealButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dealButton2.Location = new System.Drawing.Point(41, 269);
-            this.dealButton2.Name = "dealButton2";
-            this.dealButton2.Size = new System.Drawing.Size(150, 26);
-            this.dealButton2.TabIndex = 35;
-            this.dealButton2.Text = "Deal";
-            this.dealButton2.UseVisualStyleBackColor = true;
-            this.dealButton2.Click += new System.EventHandler(this.dealButton2_Click);
-            // 
-            // dealButton4
-            // 
-            this.dealButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dealButton4.Location = new System.Drawing.Point(49, 269);
-            this.dealButton4.Name = "dealButton4";
-            this.dealButton4.Size = new System.Drawing.Size(150, 26);
-            this.dealButton4.TabIndex = 36;
-            this.dealButton4.Text = "Deal";
-            this.dealButton4.UseVisualStyleBackColor = true;
-            this.dealButton4.Click += new System.EventHandler(this.dealButton4_Click);
-            // 
-            // dealButton3
-            // 
-            this.dealButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dealButton3.Location = new System.Drawing.Point(56, 269);
-            this.dealButton3.Name = "dealButton3";
-            this.dealButton3.Size = new System.Drawing.Size(150, 26);
-            this.dealButton3.TabIndex = 37;
-            this.dealButton3.Text = "Deal";
-            this.dealButton3.UseVisualStyleBackColor = true;
-            this.dealButton3.Click += new System.EventHandler(this.dealButton3_Click);
             // 
             // Form1
             // 
@@ -1039,8 +1039,8 @@
         private System.Windows.Forms.CheckBox play4Enable;
         private System.Windows.Forms.Label dealerHand1;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label compHand2;
-        private System.Windows.Forms.Label compHand1;
+        private System.Windows.Forms.Label aiHand2;
+        private System.Windows.Forms.Label aiHand1;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label compMoney;

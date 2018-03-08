@@ -18,14 +18,20 @@ namespace BlackJackAHCK
         Player player3 = new Player();
         Player player4 = new Player();
         Dealer dealer = new Dealer();
+        AI ai = new AI();
         public Form1()
         {
             InitializeComponent();
-            
+
         }
-         void deal(CheckBox check, Player player, Button hit)
+        struct Holder
         {
-            if(check.Checked)
+            public bool Stand;
+            public int result;
+        }
+        void deal(CheckBox check, Player player, Button hit)
+        {
+            if (check.Checked)
             {
                 player.Hit1(deck);
                 player.Hit1(deck);
@@ -35,8 +41,195 @@ namespace BlackJackAHCK
                 hit.Enabled = false;
             }
         }
+
+
+        void RunAI(int dealerUpValue)
+        {
+            ai.handValue = ai.Hit(ai.handValue, deck, ai.hand);
+            ai.handValue = ai.Hit(ai.handValue, deck, ai.hand);
+            aiHand1.Text = "";
+            displayHand(ai.hand, aiHand1);
+            ai.PlaceBet();
+            compMoney.Text = ai.money.ToString();
+            compBet.Text = ai.bet.ToString();
+            Holder temp = new Holder();
+            temp.result = 0;
+            temp.Stand = false;
+            while (!temp.Stand)
+            {
+                temp = Aidecide(dealerUpValue, ai.hand, ai.handValue);
+                ai.handValue = temp.result;
+            }
+            temp.result = 0;
+            temp.Stand = false;
+            while(!temp.Stand && ai.split == true)
+            {
+                temp = Aidecide(dealerUpValue, ai.hand2, ai.hand2Value);
+                ai.hand2Value = temp.result;
+            }
+            aiHand1.Text = "";
+            displayHand(ai.hand, aiHand1);
+            if (ai.split == true)
+            {
+                play2hand2.Text = "";
+                displayHand(ai.hand2, play2hand2);
+            }
+
+
+        }
+        Holder Aidecide(int dealerUpValue, List <Card> hand, int handvalue)
+        {
+            Holder temp = new Holder();
+            temp.result = handvalue;
+            if (handvalue >= 21)
+            {
+                temp.Stand = true;
+                return temp;
+            }
+            if (dealerUpValue == 1)
+            {
+                dealerUpValue = 11;
+
+            }
+            if ((hand[0].number == hand[1].number) && hand.Count == 2 && ai.split == false)
+            {
+                if(hand[0].number== "Ace")
+                {
+                    AiSplit();
+                    temp.result = ai.handValue;
+                    temp.Stand = false;
+                    return temp;
+                    
+                }
+                else if (hand[0].value == 10)
+                {
+                    temp.Stand = true;
+                    return temp;
+                }
+                else if ( hand[0].value <= 9 && hand[0].value >= 6 && dealerUpValue >= 2 && dealerUpValue <= 6)
+                {
+                    AiSplit();
+                    temp.result = ai.handValue;
+                    temp.Stand = false;
+                    return temp;
+                }
+                else if (hand[0].value <= 9 && dealerUpValue >= 8 && dealerUpValue <= 9)
+                {
+                    AiSplit();
+                    temp.result = ai.handValue;
+                    temp.Stand = false;
+                    return temp;
+                }
+                else if (hand[0].value == 8 && dealerUpValue >= 7 && dealerUpValue <= 11)
+                {
+                    AiSplit();
+                    temp.result = ai.handValue;
+                    temp.Stand = false;
+                    return temp;
+                }
+                else if (hand[0].value == 7 && dealerUpValue == 7)
+                {
+                    AiSplit();
+                    temp.result = ai.handValue;
+                    temp.Stand = false;
+                    return temp;
+                }
+                else if (hand[0].value == 3 && dealerUpValue >= 4 && dealerUpValue <= 7)
+                {
+                    AiSplit();
+                    temp.result = ai.handValue;
+                    temp.Stand = false;
+                    return temp;
+                }
+                else if (hand[0].value == 2 && dealerUpValue >= 3 && dealerUpValue <= 7)
+                {
+                    AiSplit();
+                    temp.result = ai.handValue;
+                    temp.Stand = false;
+                    return temp;
+                }
+                else
+                {
+                    temp.result = ai.Hit(handvalue, deck, hand);
+                    temp.Stand = false;
+                    return temp;
+                }
+
+
+            }
+            else if ((hand[0].number == "Ace" || hand[1].number=="Ace") && hand.Count == 2 )
+            {
+                if(hand[0].value == 9 || hand[1].value == 9)
+                {
+                    temp.Stand = true;
+                    return temp;
+                }
+                else if ((hand[0].value == 8 || hand[1].value == 8) && dealerUpValue != 6)
+                {
+                    temp.Stand = true;
+                    return temp;
+                }
+                else if ((hand[0].value == 7 || hand[1].value == 7) && (dealerUpValue == 2 || dealerUpValue == 7 || dealerUpValue == 8 || dealerUpValue == 11))
+                {
+                    temp.Stand = true;
+                    return temp;
+                }
+                else
+                {
+                    temp.result = ai.Hit(handvalue, deck, hand);
+                    temp.Stand = false;
+                    return temp;
+                }
+               
+
+            }
+
+            else if (handvalue == 12 && dealerUpValue >= 4 && dealerUpValue <=6)
+            {
+                temp.Stand = true;
+                return temp;
+            }
+            else if (handvalue >= 13 && handvalue <= 16 && dealerUpValue >= 2 && dealerUpValue <= 6)
+            {
+                temp.Stand = true;
+                return temp;
+            }
+            else if (handvalue >= 17 )
+            {
+                temp.Stand = true;
+                return temp;
+            }
+            else
+            {
+                temp.result = ai.Hit(handvalue, deck, hand);
+                temp.Stand = false;
+                return temp;
+            }
+                
+
+
+        }
+
+        void displayHand(List<Card> hand, Label label)
+        {
+            for (int i = 0; i < ai.hand.Count; i++)
+            {
+                label.Text += $"{hand[i].number} of {hand[i].suit}\n";
+            }
+        }
+        void AiSplit()
+        {
+            ai.handValue -= ai.hand[0].value;
+            play2hand2.Visible = true;
+            ai.hand2.Add(ai.hand[0]);
+            ai.hand.RemoveAt(0);
+            ai.SplitHand();
+            displayHand(ai.hand, aiHand1);
+            displayHand(ai.hand2, play2hand2);
+        }
         void RunDealer()
         {
+           
             while(dealer.handValue < 16)
             {
                 dealer.Hit(deck);
@@ -173,6 +366,7 @@ namespace BlackJackAHCK
             }
             else
             {
+                RunAI(dealer.hand[1].value);
                 RunDealer();
             }
         }
@@ -199,6 +393,7 @@ namespace BlackJackAHCK
             }
             else
             {
+                RunAI(dealer.hand[1].value);
                 RunDealer();
             }
         }
@@ -217,6 +412,7 @@ namespace BlackJackAHCK
             }
             else
             {
+                RunAI(dealer.hand[1].value);
                 RunDealer();
             }
         }
@@ -225,6 +421,7 @@ namespace BlackJackAHCK
         {
             groupBox4.Enabled = false;
             player4.myTurn = false;
+            RunAI(dealer.hand[1].value);
             RunDealer();
         }
 
@@ -240,6 +437,7 @@ namespace BlackJackAHCK
                 player1.SplitHand();
                 play1Split.Enabled = false;
                 play1hand2.Enabled = true;
+                play1hand2.Visible = true;
                 DisplayHand1(play1hand1, player1);
                 DisplayHand2(play1hand2, player1);
 
@@ -258,6 +456,8 @@ namespace BlackJackAHCK
                 play2hit2.Enabled = true;
                 player2.SplitHand();
                 play2Split.Enabled = false;
+                play2hand2.Enabled = true;
+                play2hand2.Visible = true;
                 DisplayHand1(play2hand1, player2);
                 DisplayHand2(play2hand2, player2);
             }
@@ -275,6 +475,8 @@ namespace BlackJackAHCK
                 play3hit2.Enabled = true;
                 player3.SplitHand();
                 play3Split.Enabled = false;
+                play3hand2.Enabled = true;
+                play3hand2.Visible = true;
                 DisplayHand1(play3hand1, player3);
                 DisplayHand2(play3hand2, player3);
 
@@ -293,6 +495,8 @@ namespace BlackJackAHCK
                 play4hit2.Enabled = true;
                 player4.SplitHand();
                 play4Split.Enabled = false;
+                play4hand2.Enabled = true;
+                play4hand2.Visible = true;
                 DisplayHand1(play4hand1, player4);
                 DisplayHand2(play4hand2, player4);
 
@@ -306,7 +510,7 @@ namespace BlackJackAHCK
             {
                 play1hit2.Enabled = false;
             }
-            DisplayHand2(play1hand1, player1);
+            DisplayHand2(play1hand2, player1);
         }
 
         private void play2hit2_Click(object sender, EventArgs e)
@@ -316,7 +520,7 @@ namespace BlackJackAHCK
             {
                 play2hit2.Enabled = false;
             }
-            DisplayHand2(play2hand1, player2);
+            DisplayHand2(play2hand2, player2);
         }
 
         private void play3hit2_Click(object sender, EventArgs e)
@@ -326,7 +530,7 @@ namespace BlackJackAHCK
             {
                 play3hit2.Enabled = false;
             }
-            DisplayHand2(play3hand1, player3);
+            DisplayHand2(play3hand2, player3);
         }
 
         private void play4hit2_Click(object sender, EventArgs e)
@@ -336,7 +540,7 @@ namespace BlackJackAHCK
             {
                 play4hit2.Enabled = false;
             }
-            DisplayHand2(play4hand1, player4);
+            DisplayHand2(play4hand2, player4);
         }
 
         private void play1BetButtton_Click(object sender, EventArgs e)
@@ -418,5 +622,7 @@ namespace BlackJackAHCK
             deal(play4Enable, player4, play4hit1);
             DisplayHand1(play4hand1, player4);
         }
+
+        
     }
 }
