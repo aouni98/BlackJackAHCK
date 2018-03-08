@@ -8,6 +8,8 @@ namespace BlackJackAHCK
 {
     class Deck
     {
+        public int faceCards = 96;
+        public int totalCards = 312;
         public List<string> suits = new List<string>() { "Clubs", "Spades", "Hearts", "Diamonds" };
         public List<string> face  = new List<string>() {"Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King","Ace"};
         public List<Card> cards  = new List<Card>();
@@ -26,6 +28,8 @@ namespace BlackJackAHCK
         }
         public Deck(int numberOfDecks = 1)
         {
+            faceCards = 96;
+            totalCards = 312;
            Card temp = new Card();
            for(int i = 0; i < numberOfDecks; i++)
             {
@@ -57,6 +61,11 @@ namespace BlackJackAHCK
             Card temp = new Card();
             temp = cards[0];
             cards.RemoveAt(0);
+            if(temp.value == 10)
+            {
+                faceCards -= 1;
+            }
+            totalCards -= 1;
             return temp;
         }
     }

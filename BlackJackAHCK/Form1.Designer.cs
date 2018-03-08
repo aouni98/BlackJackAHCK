@@ -41,15 +41,15 @@
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dealButton1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
+            this.play1Lost = new System.Windows.Forms.Label();
             this.play1hand2 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.play1Won = new System.Windows.Forms.Label();
             this.play1hit2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dealButton2 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.play2Lost = new System.Windows.Forms.Label();
             this.play2hand2 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.play2Won = new System.Windows.Forms.Label();
             this.play2hit2 = new System.Windows.Forms.Button();
             this.play2hand1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,8 +62,8 @@
             this.play2Money = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dealButton3 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.play3Lost = new System.Windows.Forms.Label();
+            this.play3Won = new System.Windows.Forms.Label();
             this.play3hand2 = new System.Windows.Forms.Label();
             this.play3hit2 = new System.Windows.Forms.Button();
             this.play3hand1 = new System.Windows.Forms.Label();
@@ -78,8 +78,8 @@
             this.play3Enable = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dealButton4 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.play4Lost = new System.Windows.Forms.Label();
+            this.play4Won = new System.Windows.Forms.Label();
             this.play4hand2 = new System.Windows.Forms.Label();
             this.play4hit2 = new System.Windows.Forms.Button();
             this.play4hand1 = new System.Windows.Forms.Label();
@@ -94,8 +94,8 @@
             this.play4Enable = new System.Windows.Forms.CheckBox();
             this.dealerHand1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.aiLost = new System.Windows.Forms.Label();
+            this.aiWon = new System.Windows.Forms.Label();
             this.compBet = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.aiHand2 = new System.Windows.Forms.Label();
@@ -105,6 +105,8 @@
             this.compMoney = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
+            this.startNextRound = new System.Windows.Forms.Button();
+            this.odds = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -218,9 +220,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dealButton1);
-            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.play1hand2);
-            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.play1hit2);
             this.groupBox1.Controls.Add(this.play1hand1);
             this.groupBox1.Controls.Add(this.label12);
@@ -251,17 +251,17 @@
             this.dealButton1.UseVisualStyleBackColor = true;
             this.dealButton1.Click += new System.EventHandler(this.dealButton1_Click);
             // 
-            // label13
+            // play1Lost
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(153, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(97, 25);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "You Lost";
-            this.label13.Visible = false;
+            this.play1Lost.AutoSize = true;
+            this.play1Lost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play1Lost.ForeColor = System.Drawing.Color.Red;
+            this.play1Lost.Location = new System.Drawing.Point(158, 281);
+            this.play1Lost.Name = "play1Lost";
+            this.play1Lost.Size = new System.Drawing.Size(97, 25);
+            this.play1Lost.TabIndex = 34;
+            this.play1Lost.Text = "You Lost";
+            this.play1Lost.Visible = false;
             // 
             // play1hand2
             // 
@@ -273,17 +273,17 @@
             this.play1hand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
             this.play1hand2.Visible = false;
             // 
-            // label16
+            // play1Won
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Green;
-            this.label16.Location = new System.Drawing.Point(11, 19);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(101, 25);
-            this.label16.TabIndex = 33;
-            this.label16.Text = "You Won";
-            this.label16.Visible = false;
+            this.play1Won.AutoSize = true;
+            this.play1Won.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play1Won.ForeColor = System.Drawing.Color.Green;
+            this.play1Won.Location = new System.Drawing.Point(15, 281);
+            this.play1Won.Name = "play1Won";
+            this.play1Won.Size = new System.Drawing.Size(101, 25);
+            this.play1Won.TabIndex = 33;
+            this.play1Won.Text = "You Won";
+            this.play1Won.Visible = false;
             // 
             // play1hit2
             // 
@@ -299,9 +299,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dealButton2);
-            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.play2hand2);
-            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.play2hit2);
             this.groupBox2.Controls.Add(this.play2hand1);
             this.groupBox2.Controls.Add(this.label4);
@@ -319,7 +317,7 @@
             this.groupBox2.Size = new System.Drawing.Size(281, 313);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Player 2";
+            this.groupBox2.Text = "-----";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // dealButton2
@@ -333,17 +331,17 @@
             this.dealButton2.UseVisualStyleBackColor = true;
             this.dealButton2.Click += new System.EventHandler(this.dealButton2_Click);
             // 
-            // label10
+            // play2Lost
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(154, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 25);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "You Lost";
-            this.label10.Visible = false;
+            this.play2Lost.AutoSize = true;
+            this.play2Lost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play2Lost.ForeColor = System.Drawing.Color.Red;
+            this.play2Lost.Location = new System.Drawing.Point(493, 281);
+            this.play2Lost.Name = "play2Lost";
+            this.play2Lost.Size = new System.Drawing.Size(97, 25);
+            this.play2Lost.TabIndex = 32;
+            this.play2Lost.Text = "You Lost";
+            this.play2Lost.Visible = false;
             // 
             // play2hand2
             // 
@@ -355,17 +353,17 @@
             this.play2hand2.Text = "Empty\r\nEmpty\r\nEmpty\r\nEmpty";
             this.play2hand2.Visible = false;
             // 
-            // label11
+            // play2Won
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Green;
-            this.label11.Location = new System.Drawing.Point(12, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 25);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "You Won";
-            this.label11.Visible = false;
+            this.play2Won.AutoSize = true;
+            this.play2Won.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play2Won.ForeColor = System.Drawing.Color.Green;
+            this.play2Won.Location = new System.Drawing.Point(361, 281);
+            this.play2Won.Name = "play2Won";
+            this.play2Won.Size = new System.Drawing.Size(101, 25);
+            this.play2Won.TabIndex = 31;
+            this.play2Won.Text = "You Won";
+            this.play2Won.Visible = false;
             // 
             // play2hit2
             // 
@@ -464,8 +462,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dealButton3);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.play3hand2);
             this.groupBox3.Controls.Add(this.play3hit2);
             this.groupBox3.Controls.Add(this.play3hand1);
@@ -497,29 +493,29 @@
             this.dealButton3.UseVisualStyleBackColor = true;
             this.dealButton3.Click += new System.EventHandler(this.dealButton3_Click);
             // 
-            // label8
+            // play3Lost
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(153, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 25);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "You Lost";
-            this.label8.Visible = false;
+            this.play3Lost.AutoSize = true;
+            this.play3Lost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play3Lost.ForeColor = System.Drawing.Color.Red;
+            this.play3Lost.Location = new System.Drawing.Point(835, 281);
+            this.play3Lost.Name = "play3Lost";
+            this.play3Lost.Size = new System.Drawing.Size(97, 25);
+            this.play3Lost.TabIndex = 30;
+            this.play3Lost.Text = "You Lost";
+            this.play3Lost.Visible = false;
             // 
-            // label9
+            // play3Won
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Green;
-            this.label9.Location = new System.Drawing.Point(11, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 25);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "You Won";
-            this.label9.Visible = false;
+            this.play3Won.AutoSize = true;
+            this.play3Won.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play3Won.ForeColor = System.Drawing.Color.Green;
+            this.play3Won.Location = new System.Drawing.Point(694, 281);
+            this.play3Won.Name = "play3Won";
+            this.play3Won.Size = new System.Drawing.Size(101, 25);
+            this.play3Won.TabIndex = 29;
+            this.play3Won.Text = "You Won";
+            this.play3Won.Visible = false;
             // 
             // play3hand2
             // 
@@ -638,8 +634,6 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dealButton4);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.play4hand2);
             this.groupBox4.Controls.Add(this.play4hit2);
             this.groupBox4.Controls.Add(this.play4hand1);
@@ -671,29 +665,29 @@
             this.dealButton4.UseVisualStyleBackColor = true;
             this.dealButton4.Click += new System.EventHandler(this.dealButton4_Click);
             // 
-            // label7
+            // play4Lost
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(151, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 25);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "You Lost";
-            this.label7.Visible = false;
+            this.play4Lost.AutoSize = true;
+            this.play4Lost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play4Lost.ForeColor = System.Drawing.Color.Red;
+            this.play4Lost.Location = new System.Drawing.Point(1161, 281);
+            this.play4Lost.Name = "play4Lost";
+            this.play4Lost.Size = new System.Drawing.Size(97, 25);
+            this.play4Lost.TabIndex = 28;
+            this.play4Lost.Text = "You Lost";
+            this.play4Lost.Visible = false;
             // 
-            // label3
+            // play4Won
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Green;
-            this.label3.Location = new System.Drawing.Point(9, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 25);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "You Won";
-            this.label3.Visible = false;
+            this.play4Won.AutoSize = true;
+            this.play4Won.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.play4Won.ForeColor = System.Drawing.Color.Green;
+            this.play4Won.Location = new System.Drawing.Point(1025, 281);
+            this.play4Won.Name = "play4Won";
+            this.play4Won.Size = new System.Drawing.Size(101, 25);
+            this.play4Won.TabIndex = 27;
+            this.play4Won.Text = "You Won";
+            this.play4Won.Visible = false;
             // 
             // play4hand2
             // 
@@ -823,8 +817,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label17);
-            this.groupBox5.Controls.Add(this.label18);
+            this.groupBox5.Controls.Add(this.aiLost);
+            this.groupBox5.Controls.Add(this.aiWon);
             this.groupBox5.Controls.Add(this.compBet);
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.aiHand2);
@@ -840,29 +834,29 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Comp Player";
             // 
-            // label17
+            // aiLost
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(173, 30);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 25);
-            this.label17.TabIndex = 30;
-            this.label17.Text = "You Lost";
-            this.label17.Visible = false;
+            this.aiLost.AutoSize = true;
+            this.aiLost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aiLost.ForeColor = System.Drawing.Color.Red;
+            this.aiLost.Location = new System.Drawing.Point(173, 30);
+            this.aiLost.Name = "aiLost";
+            this.aiLost.Size = new System.Drawing.Size(97, 25);
+            this.aiLost.TabIndex = 30;
+            this.aiLost.Text = "You Lost";
+            this.aiLost.Visible = false;
             // 
-            // label18
+            // aiWon
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Green;
-            this.label18.Location = new System.Drawing.Point(31, 30);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 25);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "You Won";
-            this.label18.Visible = false;
+            this.aiWon.AutoSize = true;
+            this.aiWon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aiWon.ForeColor = System.Drawing.Color.Green;
+            this.aiWon.Location = new System.Drawing.Point(31, 30);
+            this.aiWon.Name = "aiWon";
+            this.aiWon.Size = new System.Drawing.Size(101, 25);
+            this.aiWon.TabIndex = 29;
+            this.aiWon.Text = "You Won";
+            this.aiWon.Visible = false;
             // 
             // compBet
             // 
@@ -949,13 +943,44 @@
             this.playButton.UseVisualStyleBackColor = true;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
+            // startNextRound
+            // 
+            this.startNextRound.Enabled = false;
+            this.startNextRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startNextRound.Location = new System.Drawing.Point(43, 100);
+            this.startNextRound.Name = "startNextRound";
+            this.startNextRound.Size = new System.Drawing.Size(167, 79);
+            this.startNextRound.TabIndex = 31;
+            this.startNextRound.Text = "Start Next Round";
+            this.startNextRound.UseVisualStyleBackColor = true;
+            this.startNextRound.Click += new System.EventHandler(this.startNextRound_Click);
+            // 
+            // odds
+            // 
+            this.odds.AutoSize = true;
+            this.odds.Location = new System.Drawing.Point(243, 49);
+            this.odds.Name = "odds";
+            this.odds.Size = new System.Drawing.Size(46, 17);
+            this.odds.TabIndex = 35;
+            this.odds.Text = "label3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1335, 668);
+            this.Controls.Add(this.odds);
+            this.Controls.Add(this.startNextRound);
+            this.Controls.Add(this.play4Lost);
+            this.Controls.Add(this.play3Lost);
+            this.Controls.Add(this.play4Won);
+            this.Controls.Add(this.play2Lost);
+            this.Controls.Add(this.play3Won);
+            this.Controls.Add(this.play1Lost);
             this.Controls.Add(this.playButton);
+            this.Controls.Add(this.play2Won);
             this.Controls.Add(this.label28);
+            this.Controls.Add(this.play1Won);
             this.Controls.Add(this.play3Enable);
             this.Controls.Add(this.play4Enable);
             this.Controls.Add(this.groupBox5);
@@ -1047,21 +1072,23 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label compBet;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label play4Lost;
+        private System.Windows.Forms.Label play4Won;
+        private System.Windows.Forms.Label play1Lost;
+        private System.Windows.Forms.Label play1Won;
+        private System.Windows.Forms.Label play2Lost;
+        private System.Windows.Forms.Label play2Won;
+        private System.Windows.Forms.Label play3Lost;
+        private System.Windows.Forms.Label play3Won;
+        private System.Windows.Forms.Label aiLost;
+        private System.Windows.Forms.Label aiWon;
         private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Button dealButton1;
         private System.Windows.Forms.Button dealButton2;
         private System.Windows.Forms.Button dealButton3;
         private System.Windows.Forms.Button dealButton4;
+        private System.Windows.Forms.Button startNextRound;
+        private System.Windows.Forms.Label odds;
     }
 }
 

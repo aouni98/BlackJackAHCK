@@ -15,7 +15,11 @@ namespace BlackJackAHCK
             hand = new List<Card>();
             handValue = 0;
         }
-       
+       public void RoundEnd()
+        {
+            hand = new List<Card>();
+            handValue = 0;
+        }
         public int Hit(Deck deck)
         {
             Card temp = new Card();

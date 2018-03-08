@@ -7,22 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace BlackJackAHCK
 {
     public partial class Form1 : Form
     {
-        Deck deck = new Deck();
+        Deck deck = new Deck(6);
         Player player1 = new Player();
         Player player2 = new Player();
         Player player3 = new Player();
         Player player4 = new Player();
         Dealer dealer = new Dealer();
         AI ai = new AI();
+        System.Timers.Timer timer = new System.Timers.Timer();
         public Form1()
         {
             InitializeComponent();
-
+            timer.Interval = 100;
+            timer.Elapsed += new ElapsedEventHandler(myEvent);
+            timer.Enabled = true;
+            timer.Start();
+        }
+        private void myEvent(object source, ElapsedEventArgs e)
+        {
+            if (this.odds.InvokeRequired)
+            {
+                this.odds.BeginInvoke((MethodInvoker)delegate () { this.odds.Text = $"{deck.faceCards} / {deck.totalCards}"; });
+            }
+            else
+            {
+                this.odds.Text = $"{deck.faceCards} / {deck.totalCards}"; 
+            }
         }
         struct Holder
         {
@@ -91,7 +107,7 @@ namespace BlackJackAHCK
                 dealerUpValue = 11;
 
             }
-            if ((hand[0].number == hand[1].number) && hand.Count == 2 && ai.split == false)
+            if (hand.Count == 2 && ai.split == false && (hand[0].number == hand[1].number) )
             {
                 if(hand[0].number== "Ace")
                 {
@@ -157,7 +173,7 @@ namespace BlackJackAHCK
 
 
             }
-            else if ((hand[0].number == "Ace" || hand[1].number=="Ace") && hand.Count == 2 )
+            else if (hand.Count == 2 && (hand[0].number == "Ace" || hand[1].number=="Ace")  )
             {
                 if(hand[0].value == 9 || hand[1].value == 9)
                 {
@@ -209,7 +225,65 @@ namespace BlackJackAHCK
 
 
         }
-
+        void endOfRound()
+        {
+            bool won;
+            if(deck.cards.Count < 31)
+            {
+                deck = new Deck(6);
+            }
+            won = player1.RoundEnd(dealer.handValue);
+            if(won && player1.money != 0)
+            {
+                play1Won.Visible = true;
+            }
+            else if (player1.money != 0)
+            {
+                play1Lost.Visible = true;
+            }
+            play1Money.Text = player1.money.ToString();
+            won = player2.RoundEnd(dealer.handValue);
+            if (won && play2Enable.Checked)
+            {
+                play2Won.Visible = true;
+            }
+            else if(play2Enable.Checked)
+            {
+                play2Lost.Visible = true;
+            }
+            play2Money.Text = player2.money.ToString();
+            won = player3.RoundEnd(dealer.handValue);
+            if (won && play3Enable.Checked)
+            {
+                play3Won.Visible = true;
+            }
+            else if (play3Enable.Checked)
+            {
+                play3Lost.Visible = true;
+            }
+            play3Money.Text = player3.money.ToString();
+            won = player4.RoundEnd(dealer.handValue);
+            if (won && play4Enable.Checked)
+            {
+                play4Won.Visible = true;
+            }
+            else if(play4Enable.Checked)
+            {
+                play4Lost.Visible = true;
+            }
+            play4Money.Text = player4.money.ToString();
+            won = ai.RoundEnd(dealer.handValue);
+            if (won)
+            {
+                aiWon.Visible = true;
+            }
+            else
+            {
+                aiLost.Visible = true;
+            }
+            compMoney.Text = ai.money.ToString();
+            dealer.RoundEnd();
+        }
         void displayHand(List<Card> hand, Label label)
         {
             for (int i = 0; i < ai.hand.Count; i++)
@@ -235,6 +309,12 @@ namespace BlackJackAHCK
                 dealer.Hit(deck);
             }
             DisplayDealerHandFinal(dealer, dealerHand1);
+            if(dealer.hand[0].value == 10)
+            {
+                deck.faceCards--;
+            }
+            endOfRound();
+            startNextRound.Enabled = true;
         }
         void DisplayDealerHand(Dealer dealer, Label label)
         {
@@ -271,6 +351,10 @@ namespace BlackJackAHCK
         private void playButton_Click(object sender, EventArgs e)
         {
             dealer.Hit(deck);
+            if(dealer.hand[0].value == 10)
+            {
+                deck.faceCards++;
+            }
             dealer.Hit(deck);
             DisplayDealerHand(dealer, dealerHand1);
             dealButton1.Enabled = false;
@@ -427,7 +511,7 @@ namespace BlackJackAHCK
 
         private void play1Split_Click(object sender, EventArgs e)
         {
-            if (player1.hand[0].number == player1.hand[1].number)
+            if (player1.hand[0].number == player1.hand[1].number && player1.hand.Count == 2)
             {
                 player1.hand2.Add(player1.hand[0]);
                 player1.handValue -= player1.hand[0].value;
@@ -446,7 +530,7 @@ namespace BlackJackAHCK
 
         private void play2Split_Click(object sender, EventArgs e)
         {
-            if (player2.hand[0].number == player2.hand[1].number)
+            if (player2.hand[0].number == player2.hand[1].number && player2.hand.Count == 2)
             {
                 player2.handValue -= player2.hand[0].value;
                 play2hand2.Visible = true;
@@ -465,7 +549,7 @@ namespace BlackJackAHCK
 
         private void play3Split_Click(object sender, EventArgs e)
         {
-            if (player3.hand[0].number == player3.hand[1].number)
+            if (player3.hand[0].number == player3.hand[1].number && player3.hand.Count == 2)
             {
                 player3.handValue -= player3.hand[0].value;
                 play3hand2.Visible = true;
@@ -485,7 +569,7 @@ namespace BlackJackAHCK
 
         private void play4Split_Click(object sender, EventArgs e)
         {
-            if (player4.hand[0].number == player4.hand[1].number)
+            if (player4.hand[0].number == player4.hand[1].number && player4.hand.Count == 2)
             {
                 player4.handValue -= player4.hand[0].value;
                 play4hand2.Visible = true;
@@ -623,6 +707,106 @@ namespace BlackJackAHCK
             DisplayHand1(play4hand1, player4);
         }
 
-        
+        private void startNextRound_Click(object sender, EventArgs e)
+        {
+            if(player2.money == 0)
+            {
+                play2Enable.Checked = false;
+            }
+            if(player3.money == 0)
+            {
+                play3Enable.Checked = false;
+            }
+            if(player4.money == 0)
+            {
+                play4Enable.Checked = false;
+            }
+            dealer.Hit(deck);
+            dealer.Hit(deck);
+            DisplayDealerHand(dealer, dealerHand1);
+            DisplayHand1(play1hand1, player1);
+            DisplayHand1(play2hand1, player2);
+            DisplayHand1(play3hand1, player3);
+            DisplayHand1(play4hand1, player4);
+            DisplayDealerHand(dealer, dealerHand1);
+            aiHand1.Text = "";
+            displayHand(ai.hand, aiHand1);
+
+            DisplayHand2(play1hand2, player1);
+            DisplayHand2(play2hand2, player2);
+            DisplayHand2(play3hand2, player3);
+            DisplayHand2(play4hand2, player4);
+            aiHand2.Text = "";
+            displayHand(ai.hand2, aiHand2);
+
+            play1Won.Visible = false;
+            play2Won.Visible = false;
+            play3Won.Visible = false;
+            play4Won.Visible = false;
+            aiWon.Visible = false;
+
+            aiLost.Visible = false;
+            play1Lost.Visible = false;
+            play2Lost.Visible = false;
+            play3Lost.Visible = false;
+            play4Lost.Visible = false;
+
+            play1hit2.Visible = false;
+            play2hit2.Visible = false;
+            play3hit2.Visible = false;
+            play4hit2.Visible = false;
+
+            play1hit2.Enabled = false;
+            play2hit2.Enabled = false;
+            play3hit2.Enabled = false;
+            play4hit2.Enabled = false;
+
+            play1hit1.Enabled = false;
+            play2hit1.Enabled = false;
+            play3hit1.Enabled = false;
+            play4hit1.Enabled = false;
+
+            play1Split.Enabled = false;
+            play2Split.Enabled = false;
+            play3Split.Enabled = false;
+            play4Split.Enabled = false;
+
+            play1Stand.Enabled = false;
+            play2Stand.Enabled = false;
+            play3Stand.Enabled = false;
+            play4Stand.Enabled = false;
+
+            play1BetButtton.Enabled = true;
+            play2BetButton.Enabled = true;
+            play3BetButton.Enabled = true;
+            play4BetButton.Enabled = true;
+
+            dealButton1.Enabled = false;
+            dealButton2.Enabled = false;
+            dealButton3.Enabled = false;
+            dealButton4.Enabled = false;
+
+            if (player1.money != 0)
+            {
+                groupBox1.Enabled = true;
+                player1.myTurn = true;
+            }
+            else if(play2Enable.Checked)
+            {
+                groupBox2.Enabled = true;
+                player2.myTurn = true;
+            }
+            else if (play3Enable.Checked)
+            {
+                groupBox3.Enabled = true;
+                player3.myTurn = true;
+            }
+            else if (play4Enable.Checked)
+            {
+                groupBox4.Enabled = true;
+                player4.myTurn = true;
+            }
+            startNextRound.Enabled = false;
+        }
     }
 }

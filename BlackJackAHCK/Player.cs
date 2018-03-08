@@ -84,15 +84,18 @@ namespace BlackJackAHCK
         {
             split = true;
         }
-        public void RoundEnd(int dealersHand)
+        public bool RoundEnd(int dealersHand)
         {
+            bool temp = false;
             if((handValue > dealersHand && handValue <= 21) || (hand2Value > dealersHand && split == true && hand2Value <= 21) || (dealersHand > 21 && handValue <= 21) || (dealersHand > 21 && split == true && hand2Value <=21))
             {
                 money += bet * 2;
+                temp = true;
             }
             else if((handValue > 21 && dealersHand > 21) || (hand2Value > 21 && split == true && dealersHand > 21) || (handValue == dealersHand) || (hand2Value == dealersHand && split == true))
             {
                 money += bet;
+                temp = true;
             }
             bet = 0;
             handValue = 0;
@@ -100,6 +103,7 @@ namespace BlackJackAHCK
             split = false;
             hand = new List<Card>();
             hand2 = new List<Card>();
+            return temp;
         }
 
     }
