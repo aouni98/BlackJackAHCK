@@ -31,13 +31,16 @@ namespace BlackJackAHCK
         }
         private void myEvent(object source, ElapsedEventArgs e)
         {
-            if (this.odds.InvokeRequired)
+            if (odds.InvokeRequired)
             {
-                this.odds.BeginInvoke((MethodInvoker)delegate () { this.odds.Text = $"{deck.faceCards} / {deck.totalCards}"; });
+                odds.BeginInvoke((MethodInvoker)delegate () 
+                {
+                    odds.Text = $"{deck.faceCards} / {deck.totalCards}";
+                });
             }
             else
             {
-                this.odds.Text = $"{deck.faceCards} / {deck.totalCards}"; 
+                odds.Text = $"{deck.faceCards} / {deck.totalCards}"; 
             }
         }
         struct Holder
